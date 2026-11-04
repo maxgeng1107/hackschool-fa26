@@ -12,7 +12,7 @@ const checkWord = async (req, res) => {
     // TODO (Step 2): Read and store the word from the URL as a lowercase string
     const word = (req.params.word || "").toLowerCase();
     // TODO (Step 3): Validate the input
-    if (/^[a-z]{5}$/.test(word))
+    if (!/^[a-z]{5}$/.test(word))
         return res.status(400).json({ error: "Must be 5 letter word" });
     // TODO (Step 5a): Wrap Step 4 in try { ... } catch (err) { ... }
 
